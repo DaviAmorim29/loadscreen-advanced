@@ -1,1 +1,523 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+@import url('https://fonts.googleapis.com/css?family=Anton|Cabin');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+* {
+	margin: 0;
+	padding: 0;
+	font-family: major mono display;
+	z-index: 0;
+}
 
+body {
+	overflow: hidden;
+}
+#background {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	background: url(https://wallpapermemory.com/uploads/596/grand-theft-auto-v-gta-5-background-full-hd-1080p-195112.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	filter: blur(3px);
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+}
+
+#titulo {
+	margin-top: -70px;
+	text-align: center;
+	font-size: 2.5em;
+  font-family: Montserrat;
+}
+
+#cursor {
+    position: absolute;
+    z-index: 500000;
+    pointer-events: none;
+}
+
+#logo {
+	width: 20%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-60%);
+}
+
+/* BARRA DE CARREGAMENTO */
+
+.loader {
+  width: 100%;
+  height: 3px;
+  background: #81ecec;
+  margin: auto;
+  position: absolute;
+  top: 99.6%;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  left: 0;
+}
+.loader:after {
+  width: 30%;
+  height: 3px;
+  background: #d63031;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  right: 0;
+  left: 0;
+  -webkit-animation: load 2s linear infinite;
+  animation: load 2s linear infinite;
+  content: '';
+  display: block;
+}
+
+@-webkit-keyframes load {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes load {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+#music-info
+{
+  padding:20px;
+}
+
+#player
+{
+  display: none;
+}
+#now-playing
+{
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Staatliches;
+  cursor: pointer;
+}
+.icon-button
+{
+  color: rgb(255,242,255);
+  font-size: 16px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+}
+
+#volumeSlider
+{
+  width: 110px;
+  height: 9px;
+  -webkit-appearance: none;
+  background: rgba(73,233,237,0.1);
+  outline: none;
+  position: absolute;
+  margin-top: 15px;
+  border-radius: 5px;
+  margin-left: 10px
+}
+
+#volumeSlider::-webkit-slider-thumb 
+{
+  -webkit-appearance: none;
+  width: 20px;
+  height: 10px;
+  border-radius: 5px;
+  background: rgb(255,242,252);
+}
+
+
+
+/* TOGGLE BUTTON */
+
+
+
+.nav-icon1, .nav-icon2, #nav-icon3, #nav-icon4 {
+  width: 55px;
+  height: 35px;
+  position: fixed;
+  top: 4%;
+  color: black;
+  right: 3%;
+  z-index: 15;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon1 span:nth-child(2) {
+  top: 18px;
+}
+
+#nav-icon1 span:nth-child(3) {
+  top: 36px;
+}
+
+#nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon1.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+/* Icon 2 */
+
+.nav-icon2 {
+}
+
+.nav-icon2 span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 50%;
+  background: black;
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.nav-icon2 span:nth-child(even) {
+  left: 50%;
+  border-radius: 0 9px 9px 0;
+}
+
+.nav-icon2 span:nth-child(odd) {
+  left:0px;
+  border-radius: 9px 0 0 9px;
+}
+
+.nav-icon2 span:nth-child(1), .nav-icon2 span:nth-child(2) {
+  top: 0px;
+}
+
+.nav-icon2 span:nth-child(3), .nav-icon2 span:nth-child(4) {
+  top: 18px;
+}
+
+.nav-icon2 span:nth-child(5), .nav-icon2 span:nth-child(6) {
+  top: 36px;
+}
+
+.nav-icon2.open span:nth-child(1),.nav-icon2.open span:nth-child(6) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.nav-icon2.open span:nth-child(2),.nav-icon2.open span:nth-child(5) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.nav-icon2.open span:nth-child(1) {
+  left: 5px;
+  top: 7px;
+}
+
+.nav-icon2.open span:nth-child(2) {
+  left: calc(50% - 5px);
+  top: 7px;
+}
+
+.nav-icon2.open span:nth-child(3) {
+  left: -50%;
+  opacity: 0;
+}
+
+.nav-icon2.open span:nth-child(4) {
+  left: 100%;
+  opacity: 0;
+}
+
+.nav-icon2.open span:nth-child(5) {
+  left: 5px;
+  top: 29px;
+}
+
+.nav-icon2.open span:nth-child(6) {
+  left: calc(50% - 5px);
+  top: 29px;
+}
+
+/* Icon 3 */
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+  top: 18px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 36px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+/* Icon 4 */
+
+#nav-icon4 {
+}
+
+.nav-icon4 span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.nav-icon4 span:nth-child(2) {
+  top: 18px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.nav-icon4 span:nth-child(3) {
+  top: 36px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.nav-icon4.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px;
+}
+
+.nav-icon4.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.nav-icon4.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 39px;
+  left: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FIM TOGGLE BUTTON */
+
+
+
+.page {
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	right: -110vw;
+	background-color: #dfe6e9;
+	background-attachment: fixed;
+	z-index: 11;
+	font-family: Cabin;
+	background-size: cover;
+	background-position: center;
+	transition: .5s all;
+}
+
+.pageby {
+	right: 0;
+	margin: 0;
+}
+#title-second {
+	margin: 30px auto;
+	color: black;
+	text-align: center;
+	font-size: 3.5em;
+	font-family: Cabin;
+}
+
+#container-second {
+	padding: 5px;
+}
+
+#subtitle {
+	margin: 10px auto;
+	font-size: 2em;
+	font-family: Cabin;
+	text-align: center;
+}
+
+#linha {
+	width: 70px;
+	height: 5px;
+	background-color: #636e72;
+	margin: 1px auto;
+	margin-bottom: 40px;
+}
+
+.areaimg {
+	width: 594px;
+	margin: 10px auto;
+}
+
+.areaimg a {
+	display: inline-block;
+	width: 160px;
+	height: 160px;
+	margin: 15px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.areaimg a img {
+	width: 100%;
+	background-color: #b2bec3;
+}
+
+
+.info {
+	text-align: justify;
+	width: 600px;
+	font-family: Cabin;
+	margin: auto;
+	height: 0;
+	overflow: hidden;
+}
+
+.name {
+	text-align: center;
+	font-family: Cabin;
+}
+
+.descricao {
+	font-size: 20px;
+	color: black;
+	font-family: Cabin;
+}
+
+
+#linha2 {
+	width: 60px;
+	height: 5px;
+	background-color: #636e72;
+	margin: 6px auto;
+}
+
+.info:target {
+	height: auto;
+}
