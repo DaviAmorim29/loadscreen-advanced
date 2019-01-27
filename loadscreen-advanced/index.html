@@ -1,1 +1,80 @@
-
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<title>Loadscreen</title>
+</head>
+<body>
+	<img id="cursor"/>
+	<img id="logo" src="img/logo.png"></img>
+	<div class="page">
+		<div id="container-second">
+			<h1 id="title-second">Quem somos ?</h1>
+			<div class="teamarea">
+				<h3 id="subtitle">Nossa Equipe</h3>
+				<div id="linha"></div>
+				<div class="areaimg">
+					<a href="#davi"><img src="img/person-male.png" width="180vw"></a>
+					<a href="#andre"><img src="img/person-male.png" width="180vw"></a>
+					<a href="#miranha"><img src="img/person-male.png" width="180vw"></a>
+				</div>
+				<div class="info" id="davi">
+					<h2 class="name">Davi Amorim</h2>
+					<div id="linha2"></div>
+					<p class="descricao">Desenvolvedor | Programador da equipe BMG, Web Developer e Programador.</p>
+				</div>
+				<div class="info" id="andre">
+					<h2 class="name">AndreFaceman</h2>
+					<div id="linha2"></div>
+					<p class="descricao" style="text-align: center;">Programador e C.E.0.</p>
+				</div>
+				<div class="info" id="miranha">
+					<h2 class="name">Miranha | Flips_Shoter</h2>
+					<div id="linha2"></div>
+					<p class="descricao">Modelador 3D | Faz todas as modelagens, mapas da equipe BMG.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="background"></div>
+	<div id="player"></div>
+	<div class="row align-items-start">
+		<div class="col-4">
+			<div id="music-info">
+				<p id="now-playing"><span>Tocando:</span></p>
+				<div class="icon-button" onclick="OnPlayClick()"><i class="fas fa-pause"></i></div>
+				<div class="icon-button" onclick="OnSkipClick()"><i class="fas fa-forward"></i></div>
+				<input type="range" min="1" max="100" id="volumeSlider">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div id="container">
+			<header id="topo">
+				<h1 id="titulo">Brasil Master Gaming</h1>
+				<div class="nav-icon2">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</header>
+			<footer id="fimpage">
+				<div class="loader"></div>
+			</footer>
+		</div>
+	</div>
+	<script src="js/synn.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/progressbar-renderer.js"></script>
+	<script src="js/music-handler.js"></script>
+	<script src="js/music-controls.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
