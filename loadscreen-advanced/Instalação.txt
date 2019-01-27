@@ -1,0 +1,8 @@
+Obrigado por comprar esse produto, para fazer a instalação desse produto, você apenas deve pegar essa pasta e colocar
+dentro da sua base na pasta resources, depois disso volte a primeira pasta de sua base e abra o server.cfg nele você
+deve colocar "start loadscreen-advanced" dentro do server.cfg
+
+
+------------------------- Obrigado por comprar esse produto ----------------------------------------------------
+
+------------------------ Amorim --------------------------------------------------------------------------------
